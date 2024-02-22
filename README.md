@@ -90,20 +90,10 @@ bash ./scripts/classification/TimesNet.sh
 If you find this repo useful, please cite our paper.
 
 ```
-@inproceedings{tang2024rro,
-  title={Regulating the imbalance for the container relocation problem: A deep reinforcement
-learning approach},
-  author={Yin Tang
-, Zengjian Ye
-, Yongjian Chen
-, Wanting Gao
-, Zezheng Li
-, Yan Li
-, Yixuan Xiao
-, Jie Lu
-, Shuqiang Huang
-, Jian Zhang,∗},
-  journal={Computers & Industrial Engineering},
+@inproceedings{luo2024cost,
+  title={cost effective bidding},
+  author={Xiaotong Luo, Yin Tang∗},
+  journal={VLDB},
   year={2024},
 }
 ```
@@ -112,9 +102,9 @@ learning approach},
 
 If you have any questions or suggestions, feel free to contact:
 
+- Xiaotong Luo()
 - Yin Tang (ytang@jnu.edu.cn)
-- Zengjian Ye()
-- Jian Zhang (jianzhang@scut.edu.cn)
+
 
 Or describe it in Issues.
 
