@@ -93,7 +93,7 @@ If you find this repo useful, please cite our paper.
 @inproceedings{luo2024cost,
   title={cost effective bidding},
   author={Xiaotong Luo, Yin Tang∗},
-  journal={VLDB},
+  journal={},
   year={2024},
 }
 ```
