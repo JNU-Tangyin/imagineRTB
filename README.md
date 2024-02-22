@@ -90,11 +90,21 @@ bash ./scripts/classification/TimesNet.sh
 If you find this repo useful, please cite our paper.
 
 ```
-@inproceedings{wu2023timesnet,
-  title={TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis},
-  author={Haixu Wu and Tengge Hu and Yong Liu and Hang Zhou and Jianmin Wang and Mingsheng Long},
-  booktitle={International Conference on Learning Representations},
-  year={2023},
+@inproceedings{tang2024rro,
+  title={Regulating the imbalance for the container relocation problem: A deep reinforcement
+learning approach},
+  author={Yin Tang
+, Zengjian Ye
+, Yongjian Chen
+, Wanting Gao
+, Zezheng Li
+, Yan Li
+, Yixuan Xiao
+, Jie Lu
+, Shuqiang Huang
+, Jian Zhang,∗},
+  journal={Computers & Industrial Engineering},
+  year={2024},
 }
 ```
 
@@ -102,40 +112,14 @@ If you find this repo useful, please cite our paper.
 
 If you have any questions or suggestions, feel free to contact:
 
-- Haixu Wu (wuhx23@mails.tsinghua.edu.cn)
-- Tengge Hu (htg21@mails.tsinghua.edu.cn)
-- Yong Liu (liuyong21@mails.tsinghua.edu.cn)
-- Haoran Zhang (z-hr20@mails.tsinghua.edu.cn)
-- Jiawei Guo (guo-jw21@mails.tsinghua.edu.cn)
+- Yin Tang (ytang@jnu.edu.cn)
+- Zengjian Ye()
+- Jian Zhang (jianzhang@scut.edu.cn)
 
 Or describe it in Issues.
 
 ## Acknowledgement
 
-This project is supported by the National Key R&D Program of China (2021YFB1715200).
+This work is supported by National Natural Science Foundation of China (62272198)
 
-This library is constructed based on the following repos:
 
-- Forecasting: https://github.com/thuml/Autoformer.
-  
-- Anomaly Detection: https://github.com/thuml/Anomaly-Transformer.
-  
-- Classification: https://github.com/thuml/Flowformer.
-  
-
-All the experiment datasets are public, and we obtain them from the following links:
-
-- Long-term Forecasting and Imputation: https://github.com/thuml/Autoformer.
-  
-- Short-term Forecasting: https://github.com/ServiceNow/N-BEATS.
-  
-- Anomaly Detection: https://github.com/thuml/Anomaly-Transformer.
-  
-- Classification: https://www.timeseriesclassification.com/.
-  
-
-## All Thanks To Our Contributors
-
-&lt;a href=&quot;https://github.com/thuml/Time-Series-Library/graphs/contributors&quot;&gt;
-  &lt;img src=&quot;https://contrib.rocks/image?repo=thuml/Time-Series-Library&quot; /&gt;
-&lt;/a&gt;
