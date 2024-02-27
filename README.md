@@ -5,13 +5,13 @@ However, in practise, the optimal bidding strategy for real-time bidding is cons
 To address these challenges, we propose Imagine and Imitate Bidding (IIBidder), which includes Strategy Imitation and Imagination modules, to generate cost-effective bidding strategies under partially observable prices landscapes.  
 Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder reduces investment costs, optimizes bidding strategies, and improves future market price predictions.
 
-## Files explanation
+## Files and Folders
 
 - **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the datasets.ipynb instructs
 
 - **expert_traj**  the expert knowledge trajectory, to be loaded by ours.py
 
-- **methods** include baseline algorithms and ours. Please note that ...
+- **methods** includes baseline algorithms and ours. Please note that ???
 
 - README.md this file
 
@@ -37,35 +37,47 @@ Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder 
 
 1. Install Python 3.9. For convenience, execute the following command.
 
-```
+```shell
 pip install -r requirements.txt
 ```
 
-Another more elegant way to reproduce the result, of course, is use conda virtual environment, as widely appreciated.  We are not going to discuss here.
+Another more elegant way to reproduce the result, of course, is use conda virtual environment, as widely appreciated. Typically by the following command:
+
+```shell
+conda create -n ImagineRTB python=3.9
+```
+
+We are not going to discuss the details here.
 
 2. Prepare Data. 
 
 download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7),
 After downloading, preprocess the datasets as follows: 
 (1) Group the datasets by advertiser objects, resulting in nine sub-datasets. Split the datasets into training and testing sets in a 2:1 ratio. 
+
+
 (2) Retain the original columns 'click' and 'bid_price', convert the discrete numerical values of 'click' into continuous values and use regression models to learn other feature information to fit 'click', generating a third column 'ctr' representing click-through rate
+
+
 (3) Save the processed data as a .txt file format. 
 Partially processed datasets will be provided as examples for this project.
+
+
 
 for convenience, we provide a `datasets.ipynb` file under the `methods` folder. Users are encouraged to excute it instead for the above operations.
 
 3. Train and evaluate model. You can adjust parameters in global.py and reproduce the experiment results as the following examples:
 
-```
+```python
 python3 main.py
 ```
 
-`main.py` will envoke `run.py`, `post.py`, `plot.py` one by one, as introduced in the files part. 
+As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by one, the functions of which are introduced in the files & folders part. 
 
 4. Check the results
-- results are in .csv format at folder 
-- figures are at folder
-- latex tables are at folder
+- results are in .csv format at `results` folder, which are later combined together to a `final.csv` for plotting purpose.
+- figures are at `figures` folder
+- latex tables are at `tables` folder
 
 ## Citation
 
