@@ -52,7 +52,7 @@ post_param = {
     'id_vars': ['method', 'dataset', 'mask', 'budget'],
     'best_dict': {'click': 'max', 'win_rate': 'max', 'ecpc': 'min', 'cer': 'max', 'wrc': 'max'},
     'worst_dict': {'click': 'min', 'win_rate': 'min', 'ecpc': 'max', 'cer': 'min', 'wrc': 'min'},
-    'output_file' : 'final.xlsx'
+    'output_file' : 'final.csv'
 }
 
 # plot

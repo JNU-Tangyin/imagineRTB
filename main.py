@@ -2,7 +2,7 @@ from run import run
 from post import post
 from plot import plot_and_tex
 import pandas as pd
-from globals import plot_param
+from globals import plot_param, post_param
 
 def main():
     # 输出中间结果到 result/
@@ -10,7 +10,7 @@ def main():
     # 输出单独final.csv
     post()
     # 输出图和表到 figures 
-    data = pd.read_excel('final.xlsx')
+    data = pd.read_csv(post_param['output_file'])
     abl = plot_param['ablation']
     comp = plot_param['compared']
     abl_category = ['boxplot'] 

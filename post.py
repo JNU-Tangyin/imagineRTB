@@ -27,7 +27,8 @@ def post(ours='IIBidder'):
     data = concatenate_xlsx_files()
     result_df = find_want(data, ours)
     output_file=post_param['output_file']
-    result_df.to_excel(output_file, index=False)
+    # result_df.to_excel(output_file, index=False)
+    result_df.to_csv(output_file, index=False)
     print("saved to", output_file)
     return result_df
 

@@ -3,7 +3,7 @@ from plotnine import *
 from plotnine_prism import * 
 import pandas as pd
 from pandas.api.types import CategoricalDtype
-from globals import common_param, plot_param
+from globals import common_param, plot_param, post_param
 
 save_type = plot_param['save_type']
 columns = plot_param['columns']
@@ -125,8 +125,7 @@ def dataset_metric_matrix(d,data_name=None):
     + scale_fill_cmap(name= con_pal)     # plt.cm.ListedCmap
     )
     return p.save(figs+data_name+" ranking"+save_type, dpi=600, width=8, height=4,limitsize=False) if save_it else p
-
-# ggsave("test.pdf", units="in", dpi=300, width=8, height=4, device="pdf")
+    # ggsave("test.pdf", units="in", dpi=300, width=8, height=4, device="pdf")
 
 def method_boxplot(d,metric,data_name=None):
     # ggplot(ds)定义基于某个数据集作图
@@ -236,36 +235,36 @@ def dataset_metric_matrix(d,data_name=None):
 # ggsave("test.pdf", units="in", dpi=300, width=8, height=4, device="pdf")
 
 def budget_bar(d,metric,data_name=None):
-  p = (ggplot(d, aes(x = 'budget', y = 'value', fill = 'method')) 
-    + geom_boxplot(size=0.5)
-    # + geom_point(size=6, color="k")    
-    + scale_color_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
-    + scale_fill_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
-    + theme_prism()
-    + ylab(metric)
-    # + theme(legend_text = element_text(size = 15))
-    # + theme(axis_text_x = element_text(size=15))
-    # + theme(axis_title_x = element_text(size=15))
-    # + theme(axis_title_y = element_text(size=15))
-    )
-  if data_name != None:
-    return p.save(figs+data_name+metric+"_budget_bar"+save_type) if save_it else p
+    p = (ggplot(d, aes(x = 'budget', y = 'value', fill = 'method')) 
+        + geom_boxplot(size=0.5)
+        # + geom_point(size=6, color="k")    
+        + scale_color_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
+        + scale_fill_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
+        + theme_prism()
+        + ylab(metric)
+        # + theme(legend_text = element_text(size = 15))
+        # + theme(axis_text_x = element_text(size=15))
+        # + theme(axis_title_x = element_text(size=15))
+        # + theme(axis_title_y = element_text(size=15))
+        )
+    if data_name != None:
+        return p.save(figs+data_name+metric+"_budget_bar"+save_type) if save_it else p
 
 def mask_bar(d,metric,data_name=None):
-  p = (ggplot(d, aes(x = 'mask', y = 'value', fill = 'method')) 
-    + geom_boxplot(size=0.5)
-    # + geom_point(size=6, color="k")    
-    + scale_color_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
-    + scale_fill_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
-    + theme_prism()
-    + ylab(metric)
-    # + theme(legend_text = element_text(size = 15))
-    # + theme(axis_text_x = element_text(size=15))
-    # + theme(axis_title_x = element_text(size=15))
-    # + theme(axis_title_y = element_text(size=15))
-    )
-  if data_name != None:
-    return p.save(figs+data_name+metric+"_mask_bar"+save_type) if save_it else p
+    p = (ggplot(d, aes(x = 'mask', y = 'value', fill = 'method')) 
+        + geom_boxplot(size=0.5)
+        # + geom_point(size=6, color="k")    
+        + scale_color_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
+        + scale_fill_cmap_d(name= dis_pal)     # plt.cm.ListedCmap
+        + theme_prism()
+        + ylab(metric)
+        # + theme(legend_text = element_text(size = 15))
+        # + theme(axis_text_x = element_text(size=15))
+        # + theme(axis_title_x = element_text(size=15))
+        # + theme(axis_title_y = element_text(size=15))
+        )
+    if data_name != None:
+        return p.save(figs+data_name+metric+"_mask_bar"+save_type) if save_it else p
 
 
 
@@ -282,7 +281,7 @@ def tabel_to_tex(df, tab_param={'tab_name' : ['mask'],
         dd = dd.round(3) # 小数点后3位够了
         # dd = dd.round({'value': 3}) # 小数点后3位够了
         tabel = dd.pivot_table(index=tab_param['tabel_index'], columns=tab_param['tabel_columns'], values=tab_param['tabel_values'])
-        masked = float(d[1]['mask'].iloc[0])
+        masked = float(d[1]['mask'].iloc[0], observed=False)
         percent = "{:.2f}".format(masked)
         tabel.to_latex(
             buf=tabs+"{}_".format(tab_param['tab_name']) +percent+".tex",    # 文件名有标识
@@ -332,8 +331,7 @@ def plot_and_tex(df, pic_ordered, pic_category=['cloud_rain', 'heatmap', 'boxplo
 
 
 if __name__ == '__main__':
-    # data = pd.read_csv('C://Users\win10\Desktop//final.csv')
-    data = pd.read_excel('final.xlsx')
+    data = pd.read_csv(post_param['output_file'])
     abl = plot_param['ablation']
     comp = plot_param['compared']
     abl_category = ['boxplot']
