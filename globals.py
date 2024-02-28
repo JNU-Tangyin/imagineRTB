@@ -9,9 +9,10 @@ data_path = os.path.join(os.getcwd(), 'datasets')
 
 common_param = {
     "dataset_list": ['ipinyou'],  # 数据集类型有ipinyou和yoyi两种，仅提供ipinyou
-    # "ipinyou_ids": ['1458', '2259', '2261', '2821', '2997', '3358',  '3386', '3427', '3476'], 
-    'ipinyou_ids': ['2997'], # ipinyou的子数据集
-    "yoyi_ids": [], # 'yoyi'子数据集为'yoyi'
+    # "ipinyou_ids": ['1458', '2259', '2261', '2821', '2997', '3358',  '3386', '3427', '3476'],  # ipinyou的子数据集
+    'ipinyou_ids': ['2997'],
+    # "yoyi_ids": ['yoyi'], # 'yoyi'子数据集为'yoyi'
+    "yoyi_ids": [],
     "budget_scalings": [1/32, 1/16, 1/8, 1/4, 1/2], # 预算水平
     "mask_list": [0, 0.1, 0.2, 0.3, 0.4, 0.5], # 数据缺失率
     "ablation_list": ['IIBidder', 'AC_GAIL', 'PPO_GAIL', 'PPO'], # 消融实验对象
@@ -65,7 +66,7 @@ plot_param = {
     'tabs' : "tables/",
     'figs' : "figures/",
     'save_it' : True,
-    'compared' : ['IIBidder','DRLB','Lin', 'Normal', 'Uniform', 'Gamma'], # 绘制对象
-    'ablation' : ['IIBidder','PPO_GAIL','AC_GAIL', 'PPO']
+    'compared' : ['IIBidder','DRLB','Lin', 'Normal', 'Uniform', 'Gamma'], # 对比实验绘制对象
+    'ablation' : ['IIBidder','PPO_GAIL','AC_GAIL', 'PPO'] # 消融实验绘制对象
 
 }

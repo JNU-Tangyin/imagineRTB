@@ -159,8 +159,7 @@ def method_boxplot(d,metric,data_name=None):
     # + ggsave("test.pdf")
     # + coord_flip()
     )
-    if data_name != None:
-        return p.save(figs+data_name+metric+"_method_boxplot"+save_type) if save_it else p
+    return p.save(figs+metric+"_method_boxplot"+save_type) if save_it else p
 
 def budget_line(d,yl,data_name=None):
     # ggplot(ds)定义基于某个数据集作图
@@ -311,7 +310,7 @@ def plot_and_tex(df, pic_ordered, pic_category=['cloud_rain', 'heatmap', 'boxplo
     if 'heatmap' in pic_category:
         dataset_metric_matrix(df)
     if 'boxplot' in pic_category:
-        [method_boxplot(df[df.method == "IIBidder"],dx0[0]+" on "+dx0[1]) for (dx0, dx1) in df.groupby(['metric','dataset'])]
+        [method_boxplot(df,dx0[0]+" on "+dx0[1]) for (dx0, dx1) in df.groupby(['metric','dataset'])]
     if 'budget_lineplot' in pic_category:
         for dx in df.groupby(['metric','dataset']):
             dx1 = dx[1].groupby(['budget','method']).value.median().reset_index()
@@ -340,4 +339,4 @@ if __name__ == '__main__':
     abl_category = ['boxplot']
     comp_category = ['cloud_rain', 'heatmap', 'budget_lineplot', 'mask_lineplot']
     plot_and_tex(data, abl, abl_category)
-    plot_and_tex(data, comp, comp_category)
+    # plot_and_tex(data, comp, comp_category)

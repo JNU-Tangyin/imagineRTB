@@ -1,19 +1,16 @@
-import os
-import pickle
 import pandas as pd
 import numpy as np
 import torch
 from collections import namedtuple
 
 from globals import train_param, common_param
-from rtb_environment import RTB_environment
-from methods.agent.AC_GAIL import AC_GAIL
-from methods.agent.ICM_GAIL import ICM_GAIL
-from methods.agent.PPO_GAIL import PPO_GAIL
-from methods.agent.PPO import PPO
-from rtb_environment import drl_test
+from rtb_environment import RTB_environment,drl_test
+from methods.AC_GAIL_agent import AC_GAIL
+from methods.IIBidder_agent import ICM_GAIL
+from methods.PPO_GAIL_agent import PPO_GAIL
+from methods.PPO_agent import PPO
 
-
+methods = {'AC_GAIL':AC_GAIL,'IIBidder':ICM_GAIL,"PPO_GAIL":PPO_GAIL,"PPO":PPO}
 def ablation_exp(agent_name, train_file_dict, test_file_dict, dataset, budget_scaling):
     """
     This function trains the agent for RTB environment.
@@ -66,6 +63,10 @@ def ablation_exp(agent_name, train_file_dict, test_file_dict, dataset, budget_sc
         elif agent_name == 'PPO':
             rtb_agent = PPO(camp_id, state_dim, action_dim, action_value, 
                         hidden_dim, lr, device, expert_traj_path)
+        
+        # more elegant way
+        # rtb_agent = methods[agent_name](camp_id, state_dim, action_dim, action_value, 
+        #             hidden_dim, lr, device, expert_traj_path)
 
 
         # init environment

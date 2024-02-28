@@ -2,7 +2,6 @@ import pandas as pd
 from datetime import datetime
 import os
 import time
-from multiprocessing import Process
 from preprocess import data_preprocessed, mkdir
 from ablation_exp import ablation_exp
 from globals import common_param

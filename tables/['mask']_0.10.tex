@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\caption{Comparative performance with 10\% masked}
+\label{mask_0.10}
+\begin{tabular}{l|l|cc|cc|cc|cc|cc|cc|cc|cc|cc|cc}
+\toprule
+ &  & \multicolumn{10}{r}{value} \\
+ & metric & \multicolumn{5}{r}{cer} & \multicolumn{5}{r}{wrc} \\
+ & budget & 0.031250 & 0.062500 & 0.125000 & 0.250000 & 0.500000 & 0.031250 & 0.062500 & 0.125000 & 0.250000 & 0.500000 \\
+method & dataset &  &  &  &  &  &  &  &  &  &  \\
+\midrule
+IIBidder & ipinyou & 0.01 & 0.03 & 0.03 & 0.03 & 0.03 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+DRLB & ipinyou & 0.03 & 0.03 & 0.02 & 0.03 & 0.02 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+Lin & ipinyou & 0.00 & 0.01 & 0.02 & 0.03 & 0.03 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+Normal & ipinyou & 0.00 & 0.00 & 0.00 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+Uniform & ipinyou & 0.00 & 0.00 & 0.00 & 0.01 & 0.03 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+Gamma & ipinyou & 0.00 & 0.00 & 0.00 & 0.00 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+\cline{1-12}
+\bottomrule
+\end{tabular}
+\end{table}

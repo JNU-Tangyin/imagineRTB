@@ -7,31 +7,31 @@ Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder 
 
 ## Files and Folders
 
-- **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the datasets.ipynb instructs
+- **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the datasets.ipynb instructs the way of processing raw datasets. 
 
-- **expert_traj**  the expert knowledge trajectory, to be loaded by ours.py
+- **expert_traj**  the expert knowledge trajectory, to be loaded by ours.py.
 
-- **methods** includes baseline algorithms and ours. Please note that ???
+- **methods** includes baseline algorithms and ours. Please note that IIBidder_agent is our algorithm. DRLB, Uniform, Normal, Lin, and Gamma are included in the compare experiment. AC_GAIL_agent, PPO_GAIL_agent, and PPO_agent are included in the ablation experiment.
 
 - README.md this file
 
 - **ablation_exp.py**    to do ablation study
 
-- **compared_exp.py** ???
+- **compared_exp.py**    to do compare study among different baselines(DRLB, Uniform, Normal, Lin, and Gamma)
 
 - **globals.py**  global variables
 
 - **main.py**    main entrance of the experiments. to envoke run.py, post.py, and plot.py
 
-- **plot.py**  read final.csc, plot the figures used for the paper to store in `figures` folder, and generate  .tex files for tables for the papers.
+- **plot.py**  read final.csv, plot the figures used for the paper to store in `figures` folder, and generate  .tex files for tables for the papers.
 
 - **post.py**  post-process,  to put together all the intermediate results in to one `final.csv` file.
 
-- **preprocess.py**   
+- **preprocess.py**   read data from 'datasets' folder, and preprocess for compare experiment and ablation experiment.
 
 - **requirements.txt**  for install the conda virtual env.
 
-- **rtb_environment.py**  ????
+- **rtb_environment.py**  create a bidding environment for agent
 
 ## Usage
 
@@ -51,20 +51,8 @@ We are not going to discuss the details here.
 
 2. Prepare Data. 
 
-download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7),
-After downloading, preprocess the datasets as follows: 
-(1) Group the datasets by advertiser objects, resulting in nine sub-datasets. Split the datasets into training and testing sets in a 2:1 ratio. 
+Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7). Process the raw dataset according to the instruct in `datasets.ipynb` in the datasets folder. Considering the dataset size and space limitations, we provide partial sample datasets for users to directly invoke and experiment with.
 
-
-(2) Retain the original columns 'click' and 'bid_price', convert the discrete numerical values of 'click' into continuous values and use regression models to learn other feature information to fit 'click', generating a third column 'ctr' representing click-through rate
-
-
-(3) Save the processed data as a .txt file format. 
-Partially processed datasets will be provided as examples for this project.
-
-
-
-for convenience, we provide a `datasets.ipynb` file under the `methods` folder. Users are encouraged to excute it instead for the above operations.
 
 3. Train and evaluate model. You can adjust parameters in global.py and reproduce the experiment results as the following examples:
 

@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import torch
-from methods.agent.DRLB import DRLB_agent
+from methods.DRLB_agent import DRLB_agent
 from rtb_environment import RTB_environment
 from globals import common_param, train_param
 from globals import common_param

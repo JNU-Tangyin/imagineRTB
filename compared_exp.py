@@ -5,6 +5,7 @@ from methods.gamma import gamma_test
 from methods.lin import lin_test
 from methods.drlb import *
 
+# func = {'Normal':normal_test, 'Uniform':uniform_test, 'Gamma':gamma_test, 'Lin':lin_test, 'DRLB':DRLB_train}
 
 def compared_exp(method_name, train_file_dict, test_file_dict, camp_n, budget_scaling):
     """
@@ -26,6 +27,10 @@ def compared_exp(method_name, train_file_dict, test_file_dict, camp_n, budget_sc
             res = lin_test(train_file_dict[camp_id], test_file_dict[camp_id], budget)
         if method_name == 'DRLB':
             res = DRLB_train(train_file_dict[camp_id], test_file_dict[camp_id], budget)            
+
+        # more elegant than the above
+        # res = func[method_name](train_file_dict[camp_id], test_file_dict[camp_id], budget)
+        
         table.loc[camp_id, :] = res
         
     return table
