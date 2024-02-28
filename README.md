@@ -7,23 +7,23 @@ Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder 
 
 ## Files and Folders
 
-- **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the datasets.ipynb instructs the way of processing raw datasets. 
+- **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the `datasets.ipynb` instructs the way of processing raw datasets. 
 
-- **expert_traj**  the expert knowledge trajectory, to be loaded by ours.py.
+- **expert_traj**  the expert knowledge trajectory, to be loaded by `ours.py`.
 
-- **methods** includes baseline algorithms and ours. Please note that IIBidder_agent is our algorithm. DRLB, Uniform, Normal, Lin, and Gamma are included in the compare experiment. AC_GAIL_agent, PPO_GAIL_agent, and PPO_agent are included in the ablation experiment.
+- **methods** includes baseline algorithms and ours. Please note that `IIBidder_agent` is our algorithm. DRLB, Uniform, Normal, Lin, and Gamma are included in the compare experiment. AC_GAIL_agent, PPO_GAIL_agent, and PPO_agent are included in the ablation experiment.
 
-- README.md this file
+- **README.md** this file
 
 - **ablation_exp.py**    to do ablation study
 
-- **compared_exp.py**    to do compare study among different baselines(DRLB, Uniform, Normal, Lin, and Gamma)
+- **compared_exp.py**    to do comparison among different baselines (DRLB, Uniform, Normal, Lin, and Gamma)
 
 - **globals.py**  global variables
 
-- **main.py**    main entrance of the experiments. to envoke run.py, post.py, and plot.py
+- **main.py**    main entrance of the experiments. to envoke `run.py`, `post.py`, and `plot.py`
 
-- **plot.py**  read final.csv, plot the figures used for the paper to store in `figures` folder, and generate  .tex files for tables for the papers.
+- **plot.py**  read `final.csv`, plot the figures as .pdf used for the paper to store in `figures` folder, and generate  latex tables as .tex files for the papers.
 
 - **post.py**  post-process,  to put together all the intermediate results in to one `final.csv` file.
 
@@ -41,7 +41,7 @@ Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder 
 pip install -r requirements.txt
 ```
 
-Another more elegant way to reproduce the result, of course, is use conda virtual environment, as widely appreciated. Typically by the following command:
+Another more elegant way to reproduce the result, of course, is use conda virtual environment, as widely appreciated. Typically by entering the following command before the above pip installation:
 
 ```shell
 conda create -n ImagineRTB python=3.9
@@ -60,7 +60,7 @@ Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and 
 python3 main.py
 ```
 
-As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by one, the functions of which are introduced in the files & folders part. 
+As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by one, the functions of which are introduced in the **files & folders** part. 
 
 4. Check the results
 - results are in .csv format at `results` folder, which are later combined together to a `final.csv` for plotting purpose.
@@ -84,8 +84,8 @@ If you find this repo useful, please cite our paper.
 
 If you have any questions or suggestions, feel free to contact:
 
-- Xiaotong Luo()
-- Yin Tang (ytang@jnu.edu.cn)
+- Xiaotong Luo <xiaotong01@stu2020.jnu.edu.cn>
+- Yin Tang <ytang@jnu.edu.cn>
 
 Or describe it in Issues.
 
