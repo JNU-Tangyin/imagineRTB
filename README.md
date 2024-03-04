@@ -5,7 +5,7 @@ However, in practise, the optimal bidding strategy for real-time bidding is cons
 To address these challenges, we propose Imagine and Imitate Bidding (IIBidder), which includes Strategy Imitation and Imagination modules, to generate cost-effective bidding strategies under partially observable prices landscapes.  
 Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder reduces investment costs, optimizes bidding strategies, and improves future market price predictions.
 
-## Files and Folders
+## Files & Folders
 
 - **datasets**   the datasets to train and test. Please note that due to limited space, the real large datasets should be downloaded from certain websites, as the `datasets.ipynb` instructs the way of processing raw datasets. 
 
@@ -29,7 +29,7 @@ Experimental results on the iPinYou and YOYI datasets demonstrate that IIBidder 
 
 - **preprocess.py**   read data from 'datasets' folder, and preprocess for compare experiment and ablation experiment.
 
-- **requirements.txt**  for install the conda virtual env.
+- **requirements.txt**  for installation of the conda virtual env.
 
 - **rtb_environment.py**  create a bidding environment for agent
 
@@ -51,7 +51,7 @@ We are not going to discuss the details here.
 
 2. Prepare Data. 
 
-Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7). Process the raw dataset according to the instruct in `datasets.ipynb` in the datasets folder. Considering the dataset size and space limitations, we provide partial sample datasets for users to directly invoke and experiment with.
+Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7). Process the raw dataset according to the instruction in `datasets.ipynb` under the `datasets` folder. Considering the dataset size and space limitations, we provide a mini datasets for users to directly invoke and experiment with.
 
 
 3. Train and evaluate model. You can adjust parameters in global.py and reproduce the experiment results as the following examples:
@@ -60,7 +60,7 @@ Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and 
 python3 main.py
 ```
 
-As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by one, the functions of which are introduced in the **files & folders** part. 
+As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by one, the functions of which are introduced in the **Files & Folders** part. 
 
 4. Check the results
 - results are in .csv format at `results` folder, which are later combined together to a `final.csv` for plotting purpose.
