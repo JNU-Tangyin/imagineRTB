@@ -51,7 +51,9 @@ We are not going to discuss the details here.
 
 2. Prepare Data. 
 
-Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7). Process the raw dataset according to the instruction in `datasets.ipynb` under the `datasets` folder. Considering the dataset size and space limitations, we provide a mini datasets for users to directly invoke and experiment with.
+Download the original datasets from [IPINYOU](https://contest.ipinyou.com/) and [YOYI](https://apex.sjtu.edu.cn/datasets/7). Process the raw dataset according to the instruction in `datasets.ipynb` under the `datasets` folder. 
+
+Considering the dataset size and space limitations, we provide a mini IPINYOU datasets `train.theta_2997.txt` and `test.theta_2997.txt` for users to directly invoke and experiment with. As suggested, users could actually skip this data preparation step to the 3rd step and run the `main.py` to get the picture before diving themselves into the complete datasets.
 
 
 3. Train and evaluate model. You can adjust parameters in global.py and reproduce the experiment results as the following examples:
