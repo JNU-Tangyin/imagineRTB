@@ -74,12 +74,7 @@ As a scheduler, `main.py` will envoke `run.py`, `post.py`, and `plot.py` one by 
 If you find this repo useful, please cite our paper.
 
 ```
-@inproceedings{luo2024cost,
-  title={Cost-effective bidding under partially observable prices landscapes},
-  author={Xiaotong Luo, Yin Tang},
-  journal={},
-  year={2024},
-}
+ Luo, X.; Chen, Y.; Zhuo, S.; Lu, J.; Chen, Z.; Li, L.; Tian, J.; Ye, X.; Tang, Y. Imagine and Imitate: Cost-Effective Bidding under Partially Observable Price Landscapes. Big Data Cogn. Comput. 2024, 8, 46. https://doi.org/10.3390/ bdcc8050046
 ```
 
 ## Contact
